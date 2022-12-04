@@ -9,11 +9,11 @@ namespace TesteAngular.Models
         [Key]
         public int Id { get; set; }
 
-        public string Nome { get; set; }
+        public string? Nome { get; set; }
 
-        public float VAT { get; set; }
+        public float? VAT { get; set; }
 
-        public float Tax { get; set; }
+        public float? Tax { get; set; }
 
     }
 }
