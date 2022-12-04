@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<Context>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Conexao")));
+builder.Services.AddDbContext<Context>(options => options.UseMySql("server=localhost;initial catalog=Contry;uid=root;pwd=8c4ef007", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.28-mysql")));
 
 var app = builder.Build();
 

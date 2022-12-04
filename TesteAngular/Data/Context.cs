@@ -12,6 +12,6 @@ namespace TesteAngular.Data
 
         }
 
-        public DbSet<Country> Contry {get;set;}
+        public DbSet<Country> Country {get;set;}
     }
 }

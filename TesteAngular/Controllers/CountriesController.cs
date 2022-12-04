@@ -22,18 +22,18 @@ namespace TesteAngular.Controllers
         // GET: Countries
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Contry.ToListAsync());
+              return View(await _context.Country.ToListAsync());
         }
 
         // GET: Countries/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Contry == null)
+            if (id == null || _context.Country == null)
             {
                 return NotFound();
             }
 
-            var country = await _context.Contry
+            var country = await _context.Country
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (country == null)
             {
@@ -68,12 +68,12 @@ namespace TesteAngular.Controllers
         // GET: Countries/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Contry == null)
+            if (id == null || _context.Country == null)
             {
                 return NotFound();
             }
 
-            var country = await _context.Contry.FindAsync(id);
+            var country = await _context.Country.FindAsync(id);
             if (country == null)
             {
                 return NotFound();
@@ -119,12 +119,12 @@ namespace TesteAngular.Controllers
         // GET: Countries/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Contry == null)
+            if (id == null || _context.Country == null)
             {
                 return NotFound();
             }
 
-            var country = await _context.Contry
+            var country = await _context.Country
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (country == null)
             {
@@ -139,14 +139,14 @@ namespace TesteAngular.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Contry == null)
+            if (_context.Country == null)
             {
                 return Problem("Entity set 'Context.Contry'  is null.");
             }
-            var country = await _context.Contry.FindAsync(id);
+            var country = await _context.Country.FindAsync(id);
             if (country != null)
             {
-                _context.Contry.Remove(country);
+                _context.Country.Remove(country);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace TesteAngular.Controllers
 
         private bool CountryExists(int id)
         {
-          return _context.Contry.Any(e => e.Id == id);
+          return _context.Country.Any(e => e.Id == id);
         }
     }
 }
